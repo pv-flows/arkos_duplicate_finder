@@ -1,0 +1,51 @@
+========================================================
+  ARKOS DUPLICATE FINDER - TUTORIAL RÁPIDO
+========================================================
+
+VERSÃO EXECUTÁVEL (.exe) — RECOMENDADO
+---------------------------------------
+1. Copie o arquivo "ArkOS_DuplicateFinder.exe" para a raiz
+   do seu cartão SD (ex: G:\ ou E:\)
+2. Dê duplo clique no arquivo
+3. Aguarde a varredura (pode demorar dependendo da biblioteca)
+4. Ao final, responda S ou N para a quarentena
+5. Os relatórios serão salvos na mesma pasta do .exe
+
+VERSÃO SCRIPT (.py) — REQUER PYTHON INSTALADO
+-----------------------------------------------
+Opção A — Caminhos fixos (arkos_duplicate_finder_simple.py):
+  - Abra o arquivo e edite as 3 linhas no topo:
+      ROMS_DIR        → letra do seu SD (ex: "G:/")
+      REPORT_DIR      → onde salvar relatórios (ex: "G:/")
+      QUARENTENA_DIR  → pasta de quarentena (ex: "G:/QUARENTENA_ROMS")
+  - Execute no terminal:
+      python arkos_duplicate_finder_simple.py
+
+Opção B — Detecção automática (arkos_duplicate_finder.py):
+  - Coloque o arquivo .py na raiz do SD
+  - Execute no terminal:
+      python arkos_duplicate_finder.py
+
+O QUE É GERADO NA PASTA
+-----------------------------------------------
+  r36s_relatorio_duplicatas.txt  → relatório legível
+  r36s_relatorio_duplicatas.csv  → abre no Excel (separador: ;)
+  r36s_relatorio_duplicatas.json → dados brutos completos
+  QUARENTENA_ROMS\               → arquivos duplicados isolados
+                                   (criada só se confirmar S)
+
+CATEGORIAS DO RELATÓRIO
+-----------------------------------------------
+  🔴 CÓPIAS EXATAS     → arquivos idênticos (seguro remover)
+  🔴 CÓPIAS CD/ISO     → ISOs idênticos de PSX/PSP/DC
+  🟠 ZIPS IGUAIS       → ZIPs com mesmo conteúdo (Arcade/NeoGeo)
+  🟡 MESMO NOME+TAMANHO → alta suspeita de duplicata
+  🔵 VERSÕES REGIONAIS  → mesmo jogo, regiões diferentes (NÃO move)
+
+AVISO
+-----------------------------------------------
+A quarentena move APENAS cópias 100% exatas (categorias 🔴 e 🟠).
+Versões regionais (🔵) nunca são movidas automaticamente.
+Para recuperar um arquivo, basta mover de volta da pasta QUARENTENA_ROMS.
+
+========================================================
